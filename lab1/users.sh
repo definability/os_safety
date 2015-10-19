@@ -19,3 +19,5 @@ MY_USERS=(
 ["r_klinova"]="-e `date -d '+90 days' +%Y-%m-%d` -p $(perl -e 'print crypt("$ARGV[0]", "ololo")' "12345678")"
 )
 
+ADMINISTRATION="w_gromov"
+
