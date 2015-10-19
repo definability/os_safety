@@ -14,17 +14,15 @@ from sys import argv
 #options
 #   ['LOG_PID', 'LOG_CONS', 'LOG_NDELAY', 'LOG_NOWAIT', 'LOG_PERROR']]
 
-syslog.openlog(logoption=syslog.LOG_PID, facility=syslog.LOG_KERN)
-
 log_level = syslog.LOG_ERR
 log_message = "Hi!"
-
-print syslog.LOG_EMERG, syslog.LOG_DEBUG
 
 if len(argv) > 1:
     log_message = argv[1]
 if len(argv) > 2:
     log_level = int(argv[2])
 
+syslog.openlog(logoption=syslog.LOG_PID, facility=syslog.LOG_KERN)
 syslog.syslog(log_level, log_message)
+syslog.closelog()
 
