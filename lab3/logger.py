@@ -22,7 +22,7 @@ if len(argv) > 1:
 if len(argv) > 2:
     log_level = int(argv[2])
 
-syslog.openlog(logoption=syslog.LOG_PID, facility=syslog.LOG_KERN)
+syslog.openlog(logoption=syslog.LOG_PID, facility=syslog.LOG_LOCAL0)
 syslog.syslog(log_level, log_message)
 syslog.closelog()
 
