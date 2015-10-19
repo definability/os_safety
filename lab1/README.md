@@ -6,16 +6,16 @@ Needs ACL in `/home/` directory.
 
 ## How to use
 
-Execute `create_groups.sh` to create groups and users with folders.
+Execute `01_create_groups.sh` to create groups and users with folders.
 
-Execute `add_privileges.sh` to give needed privileges for users to folders.
+Execute `02_add_privileges.sh` to give needed privileges for users to folders.
 
-Execute `delete_groups.sh` to remove users with their folders and groups.
+Execute `03_delete_groups.sh` to remove users with their folders and groups.
 
 ## Example
 
 ```
-$ ./create_groups.sh
+$ ./01_create_groups.sh
 Adding group `alfa' (GID 1001) ...
 Done.
 Creating user w_gromov
@@ -37,7 +37,7 @@ Creating user n_kalinina
 ```
 
 ```
-$ ./add_privileges.sh 
+$ ./02_add_privileges.sh 
 Set 0700 for on /home/w_gromov from alfa
 Set 0755 for on /home/t_uporov from sigma
 Set read privilege for beta on /home/t_uporov from sigma
@@ -69,7 +69,7 @@ Set admin privilege for w_gromov on /home/n_kalinina from beta
 ```
 
 ```
-$ ./delete_groups.sh 
+$ ./03_delete_groups.sh 
 Deleting user w_gromov
 userdel: w_gromov mail spool (/var/mail/w_gromov) not found
 Removing group `alfa' ...
